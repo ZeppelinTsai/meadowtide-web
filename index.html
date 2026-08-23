@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>海風牧歌 (Meadowtide) | 官方網站 Official Page</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <style>
       :root {
         --bg-color: #0f172a;
@@ -74,7 +73,7 @@
         border-radius: 8px;
         padding: 1.5rem;
         font-size: 0.9rem;
-        color: #94a3b8;
+        color: #cbd5e1;
       }
       .legal-box strong {
         color: #ef4444;
@@ -82,9 +81,15 @@
       .legal-list {
         margin: 1rem 0;
         padding-left: 1.5rem;
+        color: #94a3b8;
       }
       .legal-list li {
         margin-bottom: 0.5rem;
+      }
+      .hr-divider {
+        border: 0;
+        border-top: 1px dashed var(--border-color);
+        margin: 1.5rem 0;
       }
       footer {
         text-align: center;
@@ -109,19 +114,69 @@
         <div class="intro-text">
           <p>
             《海風牧歌》(Meadowtide)
-            是一款結合地方創生與溫馨情感的獨立牧場模擬遊戲。玩家將踏上一個幾乎空無一人的「限界集落」孤島，與村長及其他角色一起，透過種植、釣魚、採集等永續發展機制，為年輕人開創一片全新的天地。
+            是一款結合地方創生與溫馨情感的獨立牧場模擬遊戲。玩家將踏上一個幾乎空無一人的「限界集落」孤島，與獨自守護亡夫回憶的阿姨（村長）以及木匠一同合作，透過種植、釣魚等永續發展機制，為年輕人開創一片全新的天地。
           </p>
         </div>
       </section>
 
-      <!-- 開發截圖 (圖片檔名請對應你上傳到儲存庫的檔名) -->
+      <!-- 開發截圖 -->
       <section>
         <h2>📸 最新開發畫面 (Screenshots)</h2>
         <div class="gallery">
-          <!-- 你可以直接把圖命名為 screen1.png 等上傳，或者改成你的檔名 -->
-          <img src="ss1.png" alt="Meadowtide Gameplay 1" />
-          <img src="ss2.png" alt="Meadowtide Gameplay 2" />
-          <img src="ss3.png" alt="Meadowtide Gameplay 3" />
+          <img src="./ss1.png" alt="Meadowtide Gameplay 1" />
+          <img src="./ss2.png" alt="Meadowtide Gameplay 2" />
+          <img src="./ss3.png" alt="Meadowtide Gameplay 3" />
+        </div>
+      </section>
+
+      <!-- 資產與技術致謝區塊 -->
+      <section>
+        <h2>🛠️ 資產與技術致謝 (Credits & AI Disclosure)</h2>
+        <div class="legal-box">
+          <p>
+            <strong>AI 輔助開發聲明：</strong><br />
+            本專案部分程式碼開發過程中，使用了 Claude、GitHub
+            Copilot、GPT（含免費版與 Plus）以及 Codex 等 AI
+            工具輔助撰寫與除錯。所有核心邏輯、遊戲機制與最終程式碼均經人工審查、調整與確認。
+          </p>
+          <p style="margin-top: 1rem">
+            <strong>視覺與音效資源：</strong><br />
+            美術與音效採用 Kenney (CC0)
+            開源資源包；部分概念圖與開發用圖像資源使用 GPT Plus
+            付費方案生成，並經人工後製與調整。
+          </p>
+          <p style="margin-top: 1rem">
+            <strong>音樂資源：</strong><br />
+            遊戲內部分背景音樂採用 Stocktune (付費商業授權 AI
+            生成音樂)，具備合法商業使用權。
+          </p>
+          <p style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8">
+            以上所有 AI
+            生成與輔助內容均透過付費或合規渠道取得，具備合法商業使用權。遊戲核心設計、劇情、世界觀與最終成品均為原創。
+          </p>
+
+          <hr class="hr-divider" />
+
+          <p><strong>English Version (Steam Compliance):</strong></p>
+          <ul class="legal-list">
+            <li>
+              <strong>Code Development:</strong> Assisted by Claude, GitHub
+              Copilot, GPT (Free & Plus), and Codex during development and
+              debugging. All core logic, game systems, and final code have been
+              manually reviewed and refined.
+            </li>
+            <li>
+              <strong>Visual & Sound Assets:</strong> Proudly utilizing Kenney
+              (CC0) asset packs. Some concept art and development images were
+              generated using GPT Plus (paid subscription) and subsequently
+              manually edited.
+            </li>
+            <li>
+              <strong>Music Track:</strong> Background music tracks are
+              generated via Stocktune (Paid Commercial License) with full,
+              verified commercial deployment rights.
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -161,7 +216,10 @@
 
       <!-- 頁尾 -->
       <footer>
-        <p>© 2026 Meadowtide Studio / ZeppelinTsai. All rights reserved.</p>
+        <p>
+          © 2026 Meadowtide Studio / [你的名字或工作室名稱]. All rights
+          reserved.
+        </p>
       </footer>
     </div>
   </body>
