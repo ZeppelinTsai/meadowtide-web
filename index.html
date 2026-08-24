@@ -4,6 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>海風牧歌 (Meadowtide) | 官方網站 Official Page</title>
+
+    <!-- SEO / 基本 meta -->
+    <meta
+      name="description"
+      content="《海風牧歌》(Meadowtide) 是一款結合地方創生與溫馨情感的獨立牧場模擬遊戲。在幾乎空無一人的「限界集落」孤島上，與村長和居民一起種植、釣魚、採集，找回這座島的生命力。目前開發中，開發者為 Solo Dev。"
+    />
+    <link
+      rel="canonical"
+      href="https://zeppelintsai.github.io/meadowtide-web/"
+    />
+
+    <!-- Open Graph（Threads / Facebook / Discord 分享預覽用） -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://zeppelintsai.github.io/meadowtide-web/"
+    />
+    <meta
+      property="og:title"
+      content="海風牧歌 (Meadowtide) | 溫馨地方創生牧場模擬遊戲"
+    />
+    <meta
+      property="og:description"
+      content="一個幾乎空無一人的「限界集落」孤島，正等待新的生命力回來。獨立開發中的溫馨牧場模擬遊戲，種植、釣魚、與居民一起把這座島找回來。"
+    />
+    <meta
+      property="og:image"
+      content="https://zeppelintsai.github.io/meadowtide-web/ss1.png"
+    />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:site_name" content="Meadowtide 海風牧歌" />
+
+    <!-- Twitter / X 卡片 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="海風牧歌 (Meadowtide) | 溫馨地方創生牧場模擬遊戲"
+    />
+    <meta
+      name="twitter:description"
+      content="一個幾乎空無一人的「限界集落」孤島，正等待新的生命力回來。獨立開發中的溫馨牧場模擬遊戲。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://zeppelintsai.github.io/meadowtide-web/ss1.png"
+    />
+
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
       :root {
@@ -92,12 +139,46 @@
         border-top: 1px dashed var(--border-color);
         margin: 1.5rem 0;
       }
+      /* 社群連結 */
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 999px;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        background-color: var(--card-bg);
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .social-links a:hover,
+      .social-links a:focus-visible {
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+      }
       footer {
         text-align: center;
         padding: 2rem 0;
         font-size: 0.85rem;
         color: #64748b;
         border-top: 1px solid var(--border-color);
+      }
+      footer a {
+        color: #94a3b8;
+      }
+      footer a:hover {
+        color: var(--accent-color);
       }
     </style>
   </head>
@@ -107,6 +188,35 @@
       <header>
         <h1>海風牧歌</h1>
         <div class="subtitle">Meadowtide</div>
+
+        <!-- 社群連結：把訪客導去你現有的官方帳號 -->
+        <nav class="social-links" aria-label="社群媒體連結">
+          <a
+            href="https://www.threads.com/@meadowtide.game"
+            target="_blank"
+            rel="noopener"
+            >🧵 Threads</a
+          >
+          <a href="https://x.com/meadowtide" target="_blank" rel="noopener"
+            >🐦 X</a
+          >
+          <a
+            href="https://www.youtube.com/@MeadowtideGame"
+            target="_blank"
+            rel="noopener"
+            >📺 YouTube</a
+          >
+          <a
+            href="https://www.reddit.com/r/Meadowtide"
+            target="_blank"
+            rel="noopener"
+            >🤖 Reddit</a
+          >
+          <a href="https://meadowtide.itch.io" target="_blank" rel="noopener"
+            >🦪 Itch.io</a
+          >
+          <a href="mailto:meadowtide.game@gmail.com">📧 Contact</a>
+        </nav>
       </header>
 
       <!-- 遊戲簡介 -->
@@ -115,7 +225,7 @@
         <div class="intro-text">
           <p>
             《海風牧歌》(Meadowtide)
-            是一款結合地方創生與溫馨情感的獨立牧場模擬遊戲。玩家將踏上一個幾乎空無一人的「限界集落」孤島，與村長及其他角色一起，透過種植、釣魚、採集等永續發展機制，為年輕人開創一片全新的天地。
+            是一款結合地方創生與溫馨情感的獨立牧場模擬遊戲。玩家將踏上一個幾乎空無一人的「限界集落」孤島，與村長及其他角色一起，透過種植、釣魚、採集等機制，為年輕人開創一片全新的天地。
           </p>
         </div>
       </section>
@@ -229,6 +339,36 @@
       <!-- 頁尾 -->
       <footer>
         <p>© 2026 Meadowtide Studio / ZeppelinTsai. All rights reserved.</p>
+        <p>
+          <a
+            href="https://www.threads.com/@meadowtide.game"
+            target="_blank"
+            rel="noopener"
+            >Threads</a
+          >
+          ・
+          <a href="https://x.com/meadowtide" target="_blank" rel="noopener"
+            >X</a
+          >
+          ・
+          <a
+            href="https://www.youtube.com/@MeadowtideGame"
+            target="_blank"
+            rel="noopener"
+            >YouTube</a
+          >
+          ・
+          <a
+            href="https://www.reddit.com/r/Meadowtide"
+            target="_blank"
+            rel="noopener"
+            >Reddit</a
+          >
+          ・
+          <a href="https://meadowtide.itch.io" target="_blank" rel="noopener"
+            >Itch.io</a
+          >
+        </p>
       </footer>
     </div>
   </body>
