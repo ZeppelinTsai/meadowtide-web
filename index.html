@@ -238,12 +238,9 @@
         margin: 3rem 0 0;
         padding: 0 0 1rem;
         display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(150px, 1fr);
-        grid-auto-columns: minmax(112px, 1fr);
-        gap: 0;
-        overflow-x: auto;
-        scroll-snap-type: x proximity;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 0;
+        row-gap: 2.75rem;
       }
       .stand {
         height: 270px;
@@ -265,7 +262,18 @@
       .lineup .name small { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.8rem; color: var(--ink-soft); }
       .lineup .role { font-size: var(--step--1); color: var(--sea-glass); font-weight: 700; margin: 0.25rem 0; }
       .lineup .dream { font-size: 0.8rem; line-height: 1.6; color: var(--ink-soft); margin: 0 0.25rem; }
-      .cast-more { margin-top: 1.5rem; color: var(--ink-soft); }
+      .gods { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 3.5rem 0 0; }
+      .gods h3 { grid-column: 1 / -1; font-size: var(--step-2); }
+      .gods figure { margin: 0; }
+      .gods img {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        border: 6px solid #fffaf0;
+        box-shadow: 0 18px 40px -22px rgba(23, 50, 79, 0.55);
+      }
+      .gods figcaption { margin-top: 0.75rem; color: var(--ink-soft); }
+      .gods figcaption strong { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); margin-right: 0.5rem; }
 
       /* ── 開發進度 ───────────────────────── */
       .progress h2 { margin-bottom: 2rem; }
@@ -321,7 +329,14 @@
       @media (max-width: 760px) {
         .day, .day:nth-of-type(even) { grid-template-columns: 1fr; }
         .day:nth-of-type(even) figure { order: 0; }
-        .lineup { grid-auto-columns: 132px; }
+        .lineup {
+          grid-template-columns: none;
+          grid-auto-flow: column;
+          grid-auto-columns: 132px;
+          overflow-x: auto;
+          scroll-snap-type: x proximity;
+        }
+        .gods { grid-template-columns: 1fr; }
         .follow, .notes { padding-block: 3.5rem; }
       }
     </style>
@@ -410,15 +425,15 @@
             <figure><img src="assets/shots/crab.webp" alt="沙灘上一隻大眼睛的寄居蟹，旁邊散落著各種貝殼" loading="lazy" width="1440" height="810" /></figure>
             <div>
               <h3>海灘上的鄰居<span class="en">Neighbors on the beach</span></h3>
-              <p>寄居蟹會按大小排隊換殼，海豹會上岸曬太陽。島上的小生物都有自己的生活。</p>
+              <p>在生物塔裡幫寄居蟹按大小排隊換殼，在港口南邊的沙灘看海豹上岸。島上的小生物都有自己的生活。</p>
             </div>
           </article>
 
           <article class="day">
             <figure><img src="assets/shots/undersea.webp" alt="博物館海底展廳，海龜游過珊瑚與遺跡石柱" loading="lazy" width="1440" height="810" /></figure>
             <div>
-              <h3>一起把博物館填滿<span class="en">Fill the museum, hall by hall</span></h3>
-              <p>釣到的魚、撿到的海洋生物都能捐給博物館。海底展廳、淡水展廳會一點一點熱鬧起來。</p>
+              <h3>把遇見的生物收進博物館<span class="en">Fill the museum as you discover</span></h3>
+              <p>釣到的魚、遇見的海洋生物，會自動收進博物館。海底展廳和淡水展廳，會跟著你的探索一點一點熱鬧起來。</p>
             </div>
           </article>
 
@@ -434,7 +449,7 @@
             <figure><img src="assets/shots/tourists.webp" alt="風車旁的海濱步道，觀光客在散步" loading="lazy" width="1440" height="810" /></figure>
             <div>
               <h3>週末的市集與觀光客<span class="en">Weekend market and visitors</span></h3>
-              <p>週六擺攤賣自己的作物和料理，週日有節慶。觀光客回來了，島就熱鬧了。</p>
+              <p>週六擺攤賣自己的作物和料理。觀光客回來了，島就熱鬧了。</p>
             </div>
           </article>
 
@@ -451,7 +466,7 @@
       <section class="section cast" id="cast">
         <div class="wrap">
           <h2>島上的居民<span class="en">The islanders</span></h2>
-          <p class="cast-lead">每個人上島都有自己的理由。他們有專業、有夢想，也都帶著一點說不出口的事。</p>
+          <p class="cast-lead">十位居民和兩位神明。每個人上島都有自己的理由，有專業、有夢想，也都帶著一點說不出口的事。</p>
           <figure class="group-shot" style="margin: 0">
             <img src="assets/shots/cherry-blossom.webp" alt="島上居民在櫻花樹下野餐的插圖" loading="lazy" width="1600" height="900" />
           </figure>
@@ -494,6 +509,12 @@
               <p class="dream">想讓荒廢的土地重新長出完整的生態。</p>
             </li>
             <li>
+              <div class="stand"><img src="assets/people/marine_biologist.webp" alt="" loading="lazy" /></div>
+              <div class="name">傑米<small>Jamie</small></div>
+              <p class="role">海洋學者</p>
+              <p class="dream">想證明受損的海洋生態可以被恢復。</p>
+            </li>
+            <li>
               <div class="stand"><img src="assets/people/artist.webp" alt="" loading="lazy" /></div>
               <div class="name">露比<small>Ruby</small></div>
               <p class="role">藝術家</p>
@@ -511,8 +532,30 @@
               <p class="role">護士</p>
               <p class="dream">想讓居民敢開口求助，不必怕麻煩別人。</p>
             </li>
+            <li>
+              <div class="stand"><img src="assets/people/mountain_god.webp" alt="" loading="lazy" /></div>
+              <div class="name">伊吹<small>Ibuki</small></div>
+              <p class="role">山神</p>
+              <p class="dream">平常待在山腰神壇，很難捉摸。</p>
+            </li>
+            <li>
+              <div class="stand"><img src="assets/people/sea_god.webp" alt="" loading="lazy" /></div>
+              <div class="name">涅莉娜<small>Nerina</small></div>
+              <p class="role">海神</p>
+              <p class="dream">常在海邊祠堂一帶，看著來往的船。</p>
+            </li>
           </ul>
-          <p class="cast-more">另外還有海洋學者傑米，以及兩位住在山上和海裡、不太常露面的居民。</p>
+          <div class="gods">
+            <h3>山與海的神明<span class="en">The gods of the mountain and the sea</span></h3>
+            <figure>
+              <img src="assets/shots/mountain-god.webp" alt="山神伊吹坐在櫻花與鳥居旁，背後是大海" loading="lazy" width="1280" height="720" />
+              <figcaption><strong>山神 伊吹</strong>在山腰神壇等著上山的人。</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/shots/sea-god.webp" alt="海神涅莉娜站在海邊祠堂前，長髮隨風飄動" loading="lazy" width="1280" height="720" />
+              <figcaption><strong>海神 涅莉娜</strong>守著海邊的祠堂。</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -526,7 +569,7 @@
             </li>
             <li class="done">
               <span class="when">2026 年 10 月</span>
-              <p>第一週（Day 1–7）可以完整玩完：八位新居民上島、第一次週六市集、週日賞櫻。</p>
+              <p>第一週（Day 1–7）可以完整玩完：八位新居民上島、兩位神明登場、第一次週六市集。</p>
             </li>
             <li class="now">
               <span class="when">現在</span>
@@ -567,7 +610,7 @@
           <h3>AI 輔助開發聲明</h3>
           <p>本專案部分程式碼開發過程中，使用了 Claude、GitHub Copilot、GPT（含免費版與 Plus）以及 Codex 等 AI 工具輔助撰寫與除錯。所有核心邏輯、遊戲機制與最終程式碼均經人工審查、調整與確認。</p>
           <h3>視覺與音效資源</h3>
-          <p>美術與音效採用 Kenney (CC0) 開源資源包；部分概念圖與開發用圖像資源使用 GPT Plus 付費方案生成，並經人工後製與調整。</p>
+          <p>角色立繪、事件 CG、概念圖與部分開發用圖像，皆使用 GPT（Plus 付費方案）生成，並經人工後製與調整。部分美術與音效採用 Kenney (CC0) 開源資源包。</p>
           <h3>音樂資源</h3>
           <p>遊戲內部分背景音樂採用 Stocktune (付費商業授權 AI 生成音樂)，具備合法商業使用權。</p>
           <p>以上所有 AI 生成與輔助內容均透過付費或合規渠道取得，具備合法商業使用權。遊戲核心設計、劇情、世界觀與最終成品均為原創。</p>
@@ -575,7 +618,7 @@
           <h3>English Version (Steam Compliance)</h3>
           <ul>
             <li><strong>Code Development:</strong> Assisted by Claude, GitHub Copilot, GPT (Free &amp; Plus), and Codex during development and debugging. All core logic, game systems, and final code have been manually reviewed and refined.</li>
-            <li><strong>Visual &amp; Sound Assets:</strong> Proudly utilizing Kenney (CC0) asset packs. Some concept art and development images were generated using GPT Plus (paid subscription) and subsequently manually edited.</li>
+            <li><strong>Visual &amp; Sound Assets:</strong> All character portraits, event CGs, concept art, and some development images were generated using GPT (Plus, paid subscription) and subsequently manually edited. Some art and sound assets use Kenney (CC0) asset packs.</li>
             <li><strong>Music Track:</strong> Background music tracks are generated via Stocktune (Paid Commercial License) with full, verified commercial deployment rights.</li>
           </ul>
 
